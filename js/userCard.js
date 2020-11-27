@@ -1,5 +1,12 @@
 (function () {
   const template = document.createElement('template');
+  /**
+   *  CSS伪类
+   *  :defined: 匹配任何已定义的元素，包括内置元素和使用CustomElementRegistry.define()定义的自定义元素。
+   *  :host: 选择 shadow DOM 的 shadow host ，内容是它内部使用的 CSS（ containing the CSS it is used inside ）。
+   *  :host(): 选择 shadow DOM 的 shadow host ，内容是它内部使用的 CSS （这样您可以从 shadow DOM 内部选择自定义元素）— 但只匹配给定方法的选择器的 shadow host 元素。
+   *  :host-context(): 选择 shadow DOM 的 shadow host ，内容是它内部使用的 CSS （这样您可以从 shadow DOM 内部选择自定义元素）— 但只匹配给定方法的选择器匹配元素的子 shadow host 元素。
+   */
   template.innerHTML =
     `<style>
       :host {

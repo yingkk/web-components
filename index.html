@@ -7,16 +7,37 @@
   <title>Web Componnets</title>
   <script src="./js/userCard.js" defer></script>
   <script src="./js/myButton.js" defer></script>
+  <script src="./js/myParagraph.js" defer></script>
+  <script src="./js/myDropdown.js" defer></script>
 </head>
 
 <body>
+  <!-- usercard-->
   <user-card image="https://semantic-ui.com/images/avatar2/large/kristy.png" name="User Name1"
     email="yourmail@some-email.com"></user-card>
+ 
+  <!-- my-paragraph  slot -->
+  <my-paragraph>
+    <slot name="my-text">
+      this is my paragraph content.
+    </slot>
+  </my-paragraph>
 
-  <user-card image="https://semantic-ui.com/images/avatar2/large/kristy.png" name="User Name2"
-    email="mymail@some-email.com"></user-card>
+   <!-- button -->
+   <my-button label="click me" bg-color></my-button>
+   <script>
+     document.querySelector('my-button').addEventListener('onClick', event => console.log(event))
+   </script>
 
-  <my-button></my-button>
+   <!-- dropdown -->
+   <my-dropdown label="部门" option="option2" options='{ "option1": { "label": "option1"},"option2": { "label": "option2"}, "option3": { "label": "option3"} }'></my-dropdown>
+  <script>
+    document
+    .querySelector('my-dropdown')
+    .addEventListener('onChange', event => console.log(event));
+  </script>
+
 </body>
+
 
 </html>
